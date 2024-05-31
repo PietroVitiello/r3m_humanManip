@@ -1,0 +1,128 @@
+{
+    "os": "Linux-5.15.0-107-generic-x86_64-with-glibc2.31",
+    "python": "3.9.10",
+    "heartbeatAt": "2024-05-31T13:24:00.866226",
+    "startedAt": "2024-05-31T13:24:00.176874",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/pita/Documents/Projects/r3m_humanManip/r3m_diffPol.py",
+    "codePathLocal": "r3m_diffPol.py",
+    "codePath": "r3m_diffPol.py",
+    "git": {
+        "remote": "git@github.com:PietroVitiello/r3m_humanManip.git",
+        "commit": "b2334e726887fa0206962d7984c69c5fb09cceab"
+    },
+    "email": "vitiellocollegiosancarlo@gmail.com",
+    "root": "/home/pita/Documents/Projects/r3m_humanManip",
+    "host": "pit-lab",
+    "username": "pita",
+    "executable": "/home/pita/miniconda3/envs/r3m_base/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3499.972125,
+        "min": 1200.0,
+        "max": 4350.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 1371.045,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4228.509,
+            "min": 1200.0,
+            "max": 4500.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4500.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4500.0
+        },
+        {
+            "current": 3600.0,
+            "min": 1200.0,
+            "max": 4300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 915.3232879638672,
+            "used": 862.3392639160156
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        }
+    ],
+    "memory": {
+        "total": 31.022083282470703
+    }
+}

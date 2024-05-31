@@ -1,0 +1,13 @@
+
+0
+Epochs:   0%|                                                                                                                                        | 0/25000 [00:00<?, ?it/s]/home/pita/miniconda3/envs/r3m_base/lib/python3.9/site-packages/diffusers/training_utils.py:167: FutureWarning: Passing a `torch.nn.Module` to `ExponentialMovingAverage.step` is deprecated. Please pass the parameters of the module instead.
+  deprecate(                                                                                                                                             | 0/1 [00:00<?, ?it/s]
+/home/pita/miniconda3/envs/r3m_base/lib/python3.9/site-packages/transformers/deepspeed.py:23: FutureWarning: transformers.deepspeed module is deprecated and will be removed in a future version. Please import deepspeed modules directly from transformers.integrations
+  warnings.warn(
+Epochs:   0%|                                                                                                                                        | 0/25000 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/pita/Documents/Projects/r3m_humanManip/r3m_diffPol.py", line 173, in <module>
+    train(model, train_dataloader, num_epochs=25000, run_name="try2", use_wandb=True)
+  File "/home/pita/Documents/Projects/r3m_humanManip/r3m_diffPol.py", line 133, in train
+    'Train batch': epoch_idx * len(dataloader) + b,
+TypeError: unsupported operand type(s) for +: 'int' and 'dict'
