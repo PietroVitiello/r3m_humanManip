@@ -25,10 +25,7 @@ class ImageActionsDataset(torch.utils.data.Dataset):
         rgb = np.zeros((640, 640, 3), dtype=np.uint8)
         rgb[80:560] = data['image']
         rgb = np.transpose(rgb, (2, 0, 1))
-        rgb = nn.Sequential(
-            transforms.Resize(256),
-            transforms.CenterCrop(224)
-        )(torch.tensor(rgb))
+        rgb = transforms.Resize(256)(torch.tensor(rgb))
 
         actions = np.zeros((40, 4, 3), dtype=np.float32)
         actions[:len(data['actions'])] = data['actions']

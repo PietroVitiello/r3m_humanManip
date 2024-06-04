@@ -97,10 +97,7 @@ class VIP_DiffPol(nn.Module):
         rgb = np.zeros((640, 640, 3), dtype=np.uint8)
         rgb[80:560] = data['image']
         rgb = np.transpose(rgb, (2, 0, 1))
-        rgb = nn.Sequential(
-            transforms.Resize(256),
-            transforms.CenterCrop(224)
-        )(torch.tensor(rgb))
+        rgb = transforms.Resize(256)(torch.tensor(rgb))
         rgb = rgb.to(self.device).unsqueeze(0)
 
         lang_enc = torch.tensor(self._lang_encoder.encode(
@@ -225,25 +222,25 @@ if __name__ == "__main__":
     model = VIP_DiffPol(action_dim=12, action_horizon=40)
 
 
-    # data = ImageActionsDataset()
-    # train_dataloader = DataLoader(data, batch_size=8, shuffle=True)
+    data = ImageActionsDataset()
+    train_dataloader = DataLoader(data, batch_size=8, shuffle=True)
 
-    # print(f"Dataset length: {len(data)}\nExample data:")
-    # print(data[0])
-    # print(model(next(iter(train_dataloader))))
-    # train(model, train_dataloader, num_epochs=2000, run_name="try3", use_wandb=True)
+    print(f"Dataset length: {len(data)}\nExample data:")
+    print(data[0])
+    print(model(next(iter(train_dataloader))))
+    train(model, train_dataloader, num_epochs=2000, run_name="try3", use_wandb=True)
 
 
 
-    model_fname = "try3/diff_pol_2997.pt"
-    model.load_model(model_fname)
-    model.eval()
+    # model_fname = "try3/diff_pol_2997.pt"
+    # model.load_model(model_fname)
+    # model.eval()
 
-    data = ImageActionsDataset_Unaltered()
-    data = data[0]
-    rgb = data["image"]
-    desc = data["language_instruction"]
-    true_actions = data["actions"]
-    pred_actions = model.inference(rgb, desc, diffusion_iters=5)
+    # data = ImageActionsDataset_Unaltered()
+    # data = data[0]
+    # rgb = data["image"]
+    # desc = data["language_instruction"]
+    # true_actions = data["actions"]
+    # pred_actions = model.inference(rgb, desc, diffusion_iters=5)
 
-    print(f"Error: {np.mean((true_actions - pred_actions)**2)}")
+    # print(f"Error: {np.mean((true_actions - pred_actions)**2)}")
