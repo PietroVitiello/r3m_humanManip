@@ -27,13 +27,19 @@ class VIP_DiffPol(nn.Module):
     def __init__(self,
                  action_dim,
                  action_horizon,
-                 device='cuda', **kwargs):
+                 device = 'cuda', 
+                 resnet_dim: int = 18,
+                 **kwargs):
+        
+        assert resnet_dim in [18, 34, 50], (
+            "ResNet model not available, chose between 18, 34, 50.")
         
         super().__init__()
-        self.r3m = load_r3m("resnet18") # resnet18, resnet34
+        self.r3m = load_r3m(f"resnet{resnet_dim}")
         self.r3m.eval()
+        r3m_out_dim = 896 if resnet_dim in [18, 34] else 2048
         self.diff_pol = DiffPolicy(
-            896, action_dim, action_horizon, device=device
+            r3m_out_dim, action_dim, action_horizon, device=device
         )
         self.device = device
         self._lang_encoder = None
